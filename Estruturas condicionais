@@ -1,0 +1,554 @@
+4° Questão
+#include <stdio.h>
+int main()
+{
+    int num;
+
+    printf("Digite um numero: \n");
+    scanf("%d", &num);
+
+    if (num%2==0)
+        printf("O numero e par.");
+    else
+        printf("O numero e impar.");
+    return 0;
+}
+
+5° Questão
+
+#include <stdio.h>
+
+int main() {
+    int x,y,z;
+
+    printf("Digite o primeiro valor.\n");
+    scanf("%d", &x);
+    printf("Digite o segundo valor. \n");
+    scanf("%d", &y);
+    printf("Digite o terceiro valor.\n");
+    scanf("%d", &z);
+    
+    
+    if(x + y > z && x + z > y && y + z > x){
+        printf("Os 3 lados formam um triangulo!\n");
+        if(x == y && x == z)
+        printf("Triangulo Equiliatero\n");
+        else
+        if(x == y || x == z || y == z)
+                printf("Isosceles\n");
+            else
+                printf("Escaleno\n");
+    }
+    else
+        printf("Os 3 lados NAO formam um trinagulo!\n");
+    
+    
+    
+    
+    return 0;
+}
+
+
+6° Questão
+#include <stdio.h>
+
+int main() {
+    int a, b, c;
+    printf("Digite 3 numeros:\n");
+    scanf("%d %d %d", &a, &b, &c);
+    if (a > c) {
+        int tmp = c;
+        c = a;
+        a = tmp;
+    }
+    if (a > b) {
+        int tmp = b;
+        b = a;
+        a = tmp;
+    }
+    if (b > c) {
+        int tmp = c;
+        c = b;
+        b = tmp;
+    }
+    printf("%d %d %d", c, b, a);
+}
+
+
+7° Questão
+#include <stdio.h>
+#include <stdlib.h>
+
+void main(){
+
+float n1, n2, resultado;
+char operacao;
+
+printf("\nInforme uma operaçao(+; -; /; *;): ");
+scanf("%c", &operacao);
+printf("\nInforme um numero: ");
+scanf("%f", &n1);
+printf("\nInforme outro numero: ");
+scanf("%f", &n2);
+
+switch(operacao)
+{
+case '+': resultado = n1 + n2;
+break;
+case '-': resultado = n1 - n2;
+break;
+case '/': resultado = n1 / n2;
+break;
+case '*': resultado = n1 * n2;
+break;
+}
+
+printf("\n %.2f %c %.2f = %.2f", n1, operacao, n2, resultado);
+
+printf("\n\n\n");
+
+}
+
+
+8°Questão
+#include <stdio.h>
+
+    int main()
+{
+    int nota1, nota2, media;
+    printf("Digite a primeira nota.");
+    scanf("%d",& nota1);
+    printf("Digite a segunda nota.");
+    scanf("%d",& nota2);
+    media = (nota1 + nota2) / 2;
+
+    if (media >= 70) {
+        printf("voce passou");
+    }
+    else if (media > 40 && media <69 ) {
+        printf("voce voce vai fazer a prova final.");
+    }
+    else
+        printf("voce foi reprovado");
+}
+
+
+
+
+9° Questão
+#include <stdio.h>
+
+main(){
+       //Cria a matriz das unidades
+     char unidade[10][10]=
+     {
+      "",          
+      "UM",
+      "DOIS",
+      "TRES",
+      "QUATRO",
+      "CINCO",
+      "SEIS",
+      "SETE",
+      "OITO",
+      "NOVE"          
+     };
+     //Cria matriz das dezenas
+     char dezena[10][20]=
+     {
+      "",
+      "DEZ",
+      "VINTE",
+      "TRINTA",
+      "QUARENTA",
+      "CINQUENTA",
+      "SESSENTA",
+      "SETENTA",
+      "OITENTA",
+      "NOVENTA"   
+     };
+     //Cria a matriz da centena
+     char centena[10][20]=
+     {
+      "",
+      "CEM",
+      "DUZENTOS",
+      "TREZENTOS",
+      "QUATROCENTOS",
+      "QUINHENTOS",
+      "SEISCENTOS",
+      "SETECENTOS",
+      "OITOCENTOS",
+      "NOVECENTOS"
+     };  
+     //Cria a matriz das excecoes
+     char excecao[10][20]=
+     {
+      "DEZ",
+      "ONZE",
+      "DOZE",
+      "TREZE",
+      "CATORZE",
+      "QUINZE",
+      "DEZESSEIS",
+      "DEZESSETE",
+      "DEZOITO",
+      "DEZENOVE"
+     };   
+     //Variavel para amarmazenar o numero
+     int num;
+     printf ("**************************************\n");
+     printf ("*   PROGRAMA DE LEITURA DE NUMEROS   *\n");
+     printf ("**************************************\n\n");
+     printf ("Digite o numero a ser escrito : ");
+     scanf ("%d",&num);
+     //Aqui o numero é valido
+     if ((num>0) && (num<1000)){
+        //Checa pra ver se ele está na exeção
+        if ((num>10) && (num<20)){
+           puts (excecao[num%10]);
+        }else {
+              //Coloca os numeros na tela
+              puts (centena[num/100]);
+              puts (dezena[num%100/10]);
+              puts (unidade[num%100%10]);    
+        }                         
+                 
+     }else {
+           printf ("Numero não permitido!");
+     }
+     getch();   
+}
+
+10° Questão
+#include <stdio.h>
+
+
+int main()
+{
+    int vcarro,vp,multa;
+
+    printf ("informe a velocidade permitida na avenida: \n");
+    scanf("%d",&vp);
+    printf("informe a velocidade do carro: \n");
+    scanf("%d",&vcarro);
+
+    if(vcarro>vp) //se ultrapassou o limite 
+    {
+        multa = (vcarro-vp)*5; 
+        printf("\nA multa foi de--> %d reais\n",multa);
+    }
+    else 
+    {
+        printf("\nVeiculo dentro do limite!\n");
+    }
+    
+    return 0;
+}
+
+11°
+#include <stdio.h>
+
+dia_do_ano (int dia, int mes, int ano) {
+
+   int ano_bissexto, data_valida = 0;  
+   int total_dias = 0;
+
+  
+ 
+   ano_bissexto = ( ((ano % 4 == 0) && (ano % 100 > 0)) || (ano % 400 == 0) );
+
+   if (dia >= 1 && dia <= 31 && mes >= 1 && mes <= 12 &&
+       ano >= 0 && ano <= 9000)    
+     if (mes == 1 || mes == 3 || mes == 5 || mes == 7 ||
+         mes == 8 || mes == 10 || mes == 12)
+        data_valida = (dia <= 31);     
+     else
+        if (mes == 2)                  
+          if (ano_bissexto)            
+            data_valida = (dia <= 29); 
+          else
+            data_valida = (dia <= 28); 
+        else
+          data_valida = (dia <= 30);   
+
+ 
+   if (data_valida) {
+ 
+    
+ 
+     switch (mes) {
+        case 12: total_dias += 30;                 
+        case 11: total_dias += 31;               
+        case 10: total_dias += 30;                  
+        case  9: total_dias += 31;                 
+        case  8: total_dias += 31;               
+        case  7: total_dias += 30;                 
+        case  6: total_dias += 31;                 
+        case  5: total_dias += 30;                  
+        case  4: total_dias += 31;                  
+        case  3: total_dias += ano_bissexto?29:28; 
+        case  2: total_dias += 31;                 
+     }
+ 
+     total_dias += dia;  
+   }
+ 
+   return (total_dias); 
+}
+
+main() {
+
+   int d, m, a, dias = 0;
+ 
+   while (!dias) {
+      printf("Entre com dia, mes e ano no formato dd/mm/aaaa: ");
+      fflush (NULL);
+      scanf("%d/%d/%d", &d, &m, &a);
+ 
+      dias = dia_do_ano(d,m,a);
+ 
+      if (!dias)
+        printf ("Data invalida! Tente novamente..\n\n");
+   }
+ 
+   printf ("\n\nEsta data representa o dia %d do ano %d.\n", dias, a);
+    return 0;
+}
+
+
+12° Questão
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+int saque ( unsigned int *restrict notas,
+            const unsigned int *restrict valores,
+            unsigned int nvalores,
+            unsigned int valor )
+{
+  
+  memset ( notas, 0, nvalores * sizeof ( int ) );
+
+  for ( int i = 0; i < nvalores; i++ )
+  {
+    
+    if ( valores[i] == 5 )
+    {
+
+      if ( valor == 6 )
+      {
+        notas[nvalores - 1] = 3;
+        valor = 0;
+        break;
+      }
+      else if ( valor == 8 )
+      {
+        notas[nvalores - 1] = 4;
+        valor = 0;
+        break;
+      }
+    }
+
+    while ( valor >= valores[i] )
+    {
+      notas[i]++;
+      valor -= valores[i];
+    }
+  }
+
+  return valor == 0;
+}
+
+int main ( void )
+{
+  static const unsigned int valores[7] = { 200, 100, 50, 20, 10, 5, 2 };
+  unsigned int notas[7];
+  unsigned int valor;
+
+  fputs ( "Quantidade desejada: ", stdout );
+  fflush ( stdout );
+
+  if ( scanf ( "%u", &valor ) == 1 )
+  {
+    if ( ! saque ( notas, valores, 7, valor ) )
+    {
+    error:
+      fputs ( "Valor inválido.\n", stdout );
+      return 0;
+    }
+
+    
+    for ( int i = 0; i < 7; i++ )
+      printf ( "R$ %3u,00 -> %u notas.\n", valores[i], notas[i] );
+  }
+  else
+    goto error;
+
+  return 0;
+}
+
+
+
+13° Questão
+
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+float qtd_hrs_trab;
+float val_hrs_trab,base_sal,sal_trab;
+int letra;
+printf("Digite o valor da hora trabalhada: \n");
+scanf("%f",&val_hrs_trab);
+printf("Digite o numeros de horas trabalhadas na semana: \n");
+scanf("%f",&qtd_hrs_trab);
+letra = 37;
+base_sal = qtd_hrs_trab * val_hrs_trab;
+if (qtd_hrs_trab <= 40)
+{
+printf("Funcionario sem acrescimo de adcional: %.2f \n\n",base_sal);
+}else
+if (qtd_hrs_trab <= 60){
+sal_trab = (base_sal * 0.5) + base_sal;
+system("cls");
+printf("Trabalhando %.0f horas no valor de %.2f\n",qtd_hrs_trab, val_hrs_trab);
+printf("Funcionario com acrescimo de 50 %c no salario: %.2f \n\n",letra,sal_trab); }else
+if (qtd_hrs_trab > 60){
+sal_trab = (base_sal * 0.1) + base_sal;
+printf("Funcionario com acrescimo de 100 %c no salario: %.2f \n\n",letra,sal_trab);
+}
+else{
+printf("**opcao invalida**\n\n");
+}
+return 0;
+}
+
+
+
+14°Questão
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+    
+    int p1, p2, r;
+    
+    int pa1, pa2, sert, pnt[5], i;
+    char spt[5] [10];
+    
+    printf("PLACAR DO JOGO: \n");
+    scanf("%d", &p1);
+    scanf("%d", &p2);
+    
+    r = p1 - p2;
+    
+    for (i = 0; i < 5; i++) {
+        
+        printf("NOME DO APOSTADOR: ");
+        scanf("%s", spt[i]);
+        
+        printf("APOSTA 01: ");
+        scanf("%d", &pa1);
+        printf("APOSTA 02: ");
+        scanf("%d", &pa2);
+        
+        pnt[i] = 0;
+        
+        if (pa1 == p1)
+            pnt[i] += 5;
+        if (pa2 == p2)
+            pnt[i] += 5;
+        
+        r = pa1 - pa2;
+        
+        if (r > 0 && r > 0 ||
+            r < 0 && r < 0 ||
+            r == 0 && r == 0)
+            pnt[i] += 10;
+    }
+    printf("\n\n PONTUACAO \n\n");
+    for (i = 0; i < 5; i++) {
+        printf("APOSTADOR : %s\n", spt[i]);
+        printf("PONTUACAO : %d\n\n", pnt[i]);
+    }
+        
+ }
+15° Questão
+
+#include <stdio.h>
+#include <stdlib.h>
+int main(void) 
+{
+float renda=0, calculo_IMP=0, resultado=0, aliq=0;
+int i,x,z;
+
+printf("CALCULAR O IMPOSTO DE RENDA\n\n");
+printf("DIGITE A RENDA MENSAL BRUTA: ");
+scanf("%f" , &renda);
+
+calculo_IMP=(renda);
+if(calculo_IMP<=1637.11)
+{
+printf("Isento de imposto de renda");
+}
+if(calculo_IMP>=1637.11 && calculo_IMP<=2453.50)
+{
+resultado=calculo_IMP*0.075; 
+printf("Isento de imposto de renda");
+}
+if(calculo_IMP>=2453.51 && calculo_IMP<=3271.38)
+{
+resultado=calculo_IMP*0.15;
+}
+if(calculo_IMP>=3271.39 && calculo_IMP<=4087.65)
+{
+resultado=calculo_IMP*0.225;
+}
+if (calculo_IMP>=4087.65)
+{resultado=calculo_IMP*0.275;
+}
+printf("O salario liquido sera de: %.2f\n\n",renda-resultado);
+
+
+return 0;
+}
+
+
+
+16° Questão
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+int quant_lados;
+float lado;
+printf ("Entre com o número de lados do polígono: \n");
+scanf ("%d", &quant_lados);
+
+switch (quant_lados)
+{
+case (3):
+printf("Qual o tamanho dos lados: \n");
+scanf ("%f", &lado);
+printf ("A área desse polígono é: %2f", (lado*lado*.73)/4);
+break;
+case (4):
+printf("Qual o tamanho dos lados: \n");
+scanf ("%f", &lado);
+printf ("A área desse polígono é: %2f", lado*lado);
+break;
+case (6):
+printf("Qual o tamanho dos lados: \n");
+scanf ("%f", &lado);
+printf ("A área desse polígono é: %2f", (6*lado*lado*1.73)/4);
+break;
+default:
+printf ("Não sei calcular a área!\n");
+
+}
+
+}
